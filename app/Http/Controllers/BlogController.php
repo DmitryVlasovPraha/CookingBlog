@@ -11,6 +11,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller {
+
+    public function __construct() {
+        $this->middleware('perm:create-comment')->only('comment');
+    }
+
     /**
      * Главная страница блога (список всех постов)
      */
@@ -70,6 +75,9 @@ class BlogController extends Controller {
         return view('blog.tag', compact('tag', 'posts'));
     }
 
+    /**
+     * Сохраняет новый комментарий в базу данных
+     */
     public function comment(CommentRequest $request) {
         $request->merge(['user_id' => auth()->user()->id]);
         $message = 'Комментарий добавлен, будет доступен после проверки';

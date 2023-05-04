@@ -7,7 +7,9 @@
     @foreach ($comments as $comment)
         <div class="card mb-3" id="comment-{{ $comment->id }}">
             <div class="card-header p-2">
+                @isset($comment->user->name)
                 {{ $comment->user->name }}
+                @endif
             </div>
             <div class="card-body p-2">
                 {{ $comment->content }}

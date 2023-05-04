@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use library\LinguaStemRu;
 
+
 class Post extends Model {
 
     use SoftDeletes, CascadeSoftDeletes;
@@ -35,6 +36,13 @@ class Post extends Model {
      * Количество постов на странице при пагинации
      */
     protected $perPage = 5;
+
+   /* private $stemmer;
+
+    public function __construct(LinguaStemRu $stemmer) {
+        $this->stemmer = $stemmer;
+
+    }*/
 
     /**
      * Связь модели Post с моделью Tag, позволяет получить
@@ -130,7 +138,7 @@ class Post extends Model {
         // разбиваем поисковый запрос на отдельные слова
         $temp = explode(' ', $search);
         $words = [];
-        $stemmer = new LinguaStemRu();
+        $stemmer = new \library\LinguaStemRu;
         foreach ($temp as $item) {
             if (iconv_strlen($item) > 3) {
                 // получаем корень слова

@@ -107,6 +107,28 @@
     </div>
 </div>
 
+<!-- javaScript Files
+	=============================================================================-->
+
+<!-- initialize jQuery Library -->
+<script src="js/jquery.min.js"></script>
+<!-- navigation JS -->
+<script src="js/navigation.js"></script>
+<!-- Popper JS -->
+<script src="js/popper.min.js"></script>
+
+<!-- magnific popup JS -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+
+
+<!-- Bootstrap jQuery -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Owl Carousel -->
+<script src="js/owl-carousel.2.3.0.min.js"></script>
+
+<script src="js/main.js"></script>
+
 
 </body>
 </html>

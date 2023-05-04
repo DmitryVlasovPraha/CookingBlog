@@ -46,12 +46,12 @@ class PostRequest extends FormRequest {
             ],
             'excerpt' => [
                 'required',
-                'min:100',
+                'min:10',
                 'max:500',
             ],
             'content' => [
                 'required',
-                'min:500',
+                'min:50',
             ],
             'image' => [
                 'mimes:jpeg,jpg,png',
