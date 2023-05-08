@@ -66,8 +66,10 @@ class Category extends Model {
      * Возвращает список всех категорий блога в виде дерева
      */
     public static function hierarchy() {
-        return self::where('parent_id', 0)->get();
+        return self::where('parent_id', 0)->limit(5)->get();
     }
 
-
+    public static function allCategories() {
+        return self::all();
+    }
 }

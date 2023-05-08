@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \App\Http\Controllers\IndexController::class)->name('index');
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 /*
  * Страницы сайта с доп.информацией
@@ -87,16 +87,16 @@ Route::group([
         'create', 'store'
     ]]);
     // загрузка изображения поста блога из wysiwyg-редактора
-    Route::post('upload/post/image', 'PostImageController@upload')
+    Route::post('upload/post/image', [\App\Http\Controllers\User\PostImageController::class, 'upload'])
         ->name('upload.post.image');
     // удаление изображения поста блога в wysiwyg-редакторе
-    Route::delete('remove/post/image', 'PostImageController@remove')
+    Route::delete('remove/post/image', [\App\Http\Controllers\User\PostImageController::class, 'remove'])
         ->name('remove.post.image');
     // загрузка изображения страницы из wysiwyg-редактора
-    Route::post('upload/page/image', 'PageImageController@upload')
+    Route::post('upload/page/image', [\App\Http\Controllers\User\PageImageController::class, 'upload'])
         ->name('upload.page.image');
     // удаление изображения страницы в wysiwyg-редакторе
-    Route::delete('remove/page/image', 'PageImageController@remove')
+    Route::delete('remove/page/image', [\App\Http\Controllers\User\PageImageController::class, 'remove'])
         ->name('remove.page.image');
     /*
      * Редактирование персональных данных
@@ -141,7 +141,6 @@ Route::group([
 Route::group([
     'as' => 'admin.', // имя маршрута, например admin.index
     'prefix' => 'admin', // префикс маршрута, например admin/index
-    //'namespace' => 'Admin', // пространство имен контроллеров
     'middleware' => ['auth'] // один или несколько посредников
 ], function () {
 
@@ -191,7 +190,7 @@ Route::group([
         'create', 'store', 'destroy' /* раньше метод show() был запрещен */
     ]]);
     // доп.маршрут, чтобы назначить роль
-    Route::get('user/{user}/role/{role}/assign', [\App\Http\Controllers\Admin\UserController::class, 'asignRole'])
+    Route::get('user/{user}/role/{role}/assign', [\App\Http\Controllers\Admin\UserController::class, 'assignRole'])
         ->name('user.assign.role');
     // доп.маршрут, чтобы назначить право
     Route::get('user/{user}/perm/{perm}/assign', [\App\Http\Controllers\Admin\UserController::class, 'assignPerm'])
@@ -218,5 +217,9 @@ Route::group([
         ->name('trash.restore');
     Route::delete('trash/destroy/{id}', [\App\Http\Controllers\Admin\TrashController::class, 'destroy'])
         ->name('trash.destroy');
-});
 
+    /*
+     * Круд над ингридиентами*/
+    Route::resource('ingredient', \App\Http\Controllers\Admin\IngredientController::class, ['except' => 'show']);
+
+});

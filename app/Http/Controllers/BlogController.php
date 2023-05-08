@@ -35,7 +35,8 @@ class BlogController extends Controller {
             ->published()
             ->orderBy('created_at')
             ->paginate();
-        return view('blog.post', compact('post', 'comments'));
+        $topics = Post::orderBy('created_at', 'DESC')->limit(6)->get();
+        return view('blog.post', compact('post', 'comments', 'topics'));
     }
 
     /**
@@ -103,4 +104,6 @@ class BlogController extends Controller {
         $posts = Post::search($search)->paginate()->withQueryString();
         return view('blog.search', compact('posts', 'search'));
     }
+
+
 }

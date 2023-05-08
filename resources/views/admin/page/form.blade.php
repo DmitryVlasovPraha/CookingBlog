@@ -24,6 +24,20 @@
     <textarea class="form-control" name="content" id="editor" placeholder="Контент (html)"
               required rows="10">{{ old('content') ?? $page->content ?? '' }}</textarea>
 </div>
+
+<div class="form-group">
+    <input type="file" class="form-control-file" name="image" accept="image/png, image/jpeg">
+</div>
+
+@isset($post->image)
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="remove" id="remove">
+        <label class="form-check-label" for="remove">
+            Удалить загруженное изображение
+        </label>
+    </div>
+@endisset
+
 <div class="form-group">
     <button type="submit" class="btn btn-primary">Сохранить</button>
 </div>

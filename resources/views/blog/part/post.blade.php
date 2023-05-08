@@ -1,39 +1,31 @@
-<div class="card mb-4">
-    <div class="card-header">
-        <h2>{{ $post->name }}</h2>
-    </div>
-    <div class="card-body">
-        @if ($post->image)
-            <img src="{{ asset('storage/post/image/'.$post->image) }}" alt="" class="img-fluid" />
-        @else
-            <img src="http://via.placeholder.com/1000x300" alt="" class="img-fluid">
-        @endif
-        <p class="mt-3 mb-0">{{ $post->excerpt }}</p>
-    </div>
-    <div class="card-footer">
-        <div class="clearfix">
-            <span class="float-left">
-                Автор:
-                <a href="{{ route('blog.author', ['user' => $post->user->id]) }}">
-                    {{ $post->user->name }}
-                </a>
-                <br>
-                Дата: {{ $post->created_at }}
-            </span>
-            <span class="float-right">
-                <a href="{{ route('blog.post', ['post' => $post->slug]) }}"
-                   class="btn btn-dark">Читать дальше</a>
-            </span>
+<div class="col-lg-6 mb-30">
+    <div class="ts-grid-box ts-grid-content">
+        <a class="post-cat ts-green-bg" href="#">Sports</a>
+        <div class="ts-post-thumb">
+            <a href="{{ route('blog.post', ['post' => $post->slug]) }}">
+                @if ($post->image)
+                    <img src="{{ asset('storage/post/image/'.$post->image) }}" alt="" class="img-fluid" />
+                @else
+                    <img src="http://via.placeholder.com/1000x300" alt="" class="img-fluid">
+                @endif
+            </a>
+        </div>
+        <div class="post-content">
+            <h3 class="post-title md">
+                <a href="{{ route('blog.post', ['post' => $post->slug]) }}">{{ $post->name }}</a>
+            </h3>
+            <ul class="post-meta-info">
+                <li>
+                    <a href="{{ route('blog.author', ['user' => $post->user->id]) }}">
+                        {{$post->user->name}}
+                    </a>
+                </li>
+                <li>
+                    <i class="fa fa-clock-o"></i>
+                    {{$post->created_at}}
+                </li>
+            </ul>
+            <p>{{ $post->excerpt }}</p>
         </div>
     </div>
-    @if ($post->tags->count())
-        <div class="card-footer">
-            Теги:
-            @foreach($post->tags as $tag)
-                @php $comma = $loop->last ? '' : ' • ' @endphp
-                <a href="{{ route('blog.tag', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
-                {{ $comma }}
-            @endforeach
-        </div>
-    @endif
 </div>

@@ -52,6 +52,10 @@ class Post extends Model {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
+    public function reviews() {
+        return $this->belongsToMany(Review::class)->withTimestamps();
+    }
+
     /**
      * Связь модели Post с моделью Category, позволяет получить
      * родительскую категорию поста
@@ -66,6 +70,13 @@ class Post extends Model {
      */
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Связь модели Post с моделью Ingredient
+     */
+    public function ingredient() {
+        return $this->belongsToMany(Ingredient::class);
     }
 
     /**
@@ -219,5 +230,13 @@ class Post extends Model {
         }
         return Carbon::createFromFormat('Y-m-d H:i:s', $value)
             ->timezone($timezone)->format('d.m.Y H:i');
+    }
+
+    public static function allPosts() {
+        return self::orderBy('created_at', 'DESC')->limit(3)->get();
+    }
+
+    public static function latestPosts(){
+        return self::orderBy('created_at', 'DESC')->limit(7)->get();
     }
 }

@@ -34,7 +34,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'email_verified_at'
+        'name', 'email', 'password', 'email_verified_at', 'image', 'content'
     ];
 
     /**
@@ -92,4 +92,7 @@ class User extends Authenticatable {
         return Carbon::createFromFormat('Y-m-d H:i:s', $value)
             ->timezone($timezone)->format('d.m.Y H:i');
     }
+
+
 }
+

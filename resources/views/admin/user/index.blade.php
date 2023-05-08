@@ -21,7 +21,9 @@
                 <td>{{ $user->name }}</td>
                 <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
                 <td>{{ $user->posts->count() }}</td>
+                @isset($user->comments)
                 <td>{{ $user->comments->count() }}</td>
+                @endisset
                 <td>
                     @perm('edit-user')
                     <a href="{{ route('admin.user.edit', ['user' => $user->id]) }}">

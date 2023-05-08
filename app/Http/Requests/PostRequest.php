@@ -51,7 +51,7 @@ class PostRequest extends FormRequest {
             ],
             'content' => [
                 'required',
-                'min:50',
+                'min:5',
             ],
             'image' => [
                 'mimes:jpeg,jpg,png',

@@ -19,7 +19,9 @@
 
 </head>
 <body>
+
 <div class="container">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
         <!-- Логотип и кнопка «Гамбургер» -->
         <a class="navbar-brand" href="{{ route('admin.index') }}">Панель управления</a>
@@ -68,7 +70,7 @@
                 </li>
                 @endperm
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Страницы</a>
+                    <a class="nav-link" href="{{ route('admin.page.create') }}">Страницы</a>
                 </li>
                 @perm('manage-posts')
                 <li class="nav-item">
@@ -117,6 +119,7 @@
     </div>
 </div>
 
+<script src="//code.jquery.com/jquery-latest.js"></script>
 <script src="{{ asset('js/back.js') }}"></script>
 </body>
 </html>

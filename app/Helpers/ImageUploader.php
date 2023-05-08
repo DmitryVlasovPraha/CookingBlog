@@ -8,7 +8,7 @@ class ImageUploader {
 
     public function upload() {
         request()->validate(['image' => [
-            'mimes:jpeg,jpg,png',
+            'mimes:jpeg,jpg,png,webp',
             'max:5000' // 5 Мбайт
         ]]);
         $path = request()->file('image')->store('upload', 'public');

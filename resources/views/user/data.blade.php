@@ -23,6 +23,10 @@
             </select>
         </div>
         <div class="form-group">
+    <textarea class="form-control" name="content" id="editor" placeholder="Текст поста"
+              rows="4">{{ old('content') ?? $user->content ?? '' }}</textarea>
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-success">Сохранить</button>
         </div>
     </form>

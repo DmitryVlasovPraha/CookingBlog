@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -19,6 +20,9 @@ class ImageSaver {
         $dir = 'post';
         if ($item instanceof Category) {
             $dir = 'category';
+        }
+        if ($item instanceof User) {
+            $dir = 'user';
         }
         $name = $item->image;
         if ($name && request()->remove) { // если надо удалить изображение
@@ -38,7 +42,7 @@ class ImageSaver {
             $name = basename($src); // имя загруженного файла
             // создаем уменьшенное изображение 1000x300px, качество 100%
             $dst = str_replace('source', 'image', $src);
-            $this->resize($src, $dst, 1000, 300);
+            $this->resize($src, $dst,900,900);
         }
         return $name;
     }
@@ -71,6 +75,9 @@ class ImageSaver {
         $dir = 'post';
         if ($item instanceof Category) {
             $dir = 'category';
+        }
+        if ($item instanceof User) {
+            $dir = 'user';
         }
         $image = $item->image;
         if ($image) {

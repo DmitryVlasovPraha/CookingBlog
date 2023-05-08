@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Page;
+use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
@@ -56,6 +57,18 @@ class ComposerServiceProvider extends ServiceProvider {
         });
         View::composer('layout.part.popular-tags', function($view) {
             $view->with(['items' => Tag::popular()]);
+        });
+        View::composer('layout.components.header', function($view) {
+            $view->with(['pages' => Page::allPages()]);
+        });
+        View::composer('layout.components.header', function($view) {
+            $view->with(['categories' => Category::allCategories()]);
+        });
+        View::composer('layout.components.header', function($view) {
+            $view->with(['posts' => Post::allPosts()]);
+        });
+        View::composer('blog.components.latest-posts', function($view) {
+            $view->with(['posts' => Post::latestPosts()]);
         });
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\ImageSaver;
 use App\Helpers\ImageUploader;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PageRequest;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -38,7 +40,7 @@ class PageController extends Controller {
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required|max:100',
-            'parent_id' => 'numeric|nullable',
+            'parent_id' => 'integer|nullable',
             'slug' => 'required|max:100|unique:pages|regex:~^[-_a-z0-9]+$~i',
             'content' => 'required',
         ]);
@@ -62,7 +64,7 @@ class PageController extends Controller {
     public function update(Request $request, Page $page) {
         $this->validate($request, [
             'name' => 'required|max:100',
-            'parent_id' => 'numeric|not_in:'.$page->id.'|nullable',
+            'parent_id' => 'integer|not_in:'.$page->id.'|nullable',
             // обязательное, не больше 100 символов, уникальное (без учета slug этой
             // записи таблицы pages) и содержать буквы, цифры, дефис и подчеркивание
             'slug' => 'required|max:100|unique:pages,slug,'.$page->id.',id|regex:~^[-_a-z0-9]+$~i',

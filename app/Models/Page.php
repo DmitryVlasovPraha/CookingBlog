@@ -10,6 +10,7 @@ class Page extends Model {
         'slug',
         'content',
         'parent_id',
+        'image'
     ];
 
     /**
@@ -28,5 +29,9 @@ class Page extends Model {
      */
     public function parent() {
         return $this->belongsTo(Page::class);
+    }
+
+    public static function allPages() {
+        return self::all();
     }
 }

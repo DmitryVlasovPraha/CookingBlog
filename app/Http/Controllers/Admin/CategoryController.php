@@ -33,7 +33,8 @@ class CategoryController extends Controller {
      * Показывает форму для создания категории
      */
     public function create() {
-        return view('admin.category.create');
+        $items = Category::all();
+        return view('admin.category.create', compact('items'));
     }
 
     /**

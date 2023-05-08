@@ -17,6 +17,7 @@ class CreatePagesTable extends Migration {
             $table->string('name', 100)->nullable(false);
             $table->text('content')->nullable(false);
             $table->string('slug', 100)->unique()->nullable(false);
+            $table->string('image', 50)->nullable();
             $table->timestamps();
 
             // внешний ключ, ссылается на поле id таблицы pages
