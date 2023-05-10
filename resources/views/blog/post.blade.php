@@ -50,8 +50,31 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-9">
+
+
+                    <!-- Вывод ингридиентов-->
+                    <div class="author-box">
+
+                        <div class="author-info">
+                            <h4 class="author-name">Вам понадобится:</h4>
+                            <div class="clearfix"></div>
+
+
+
+                                <p>-{{$post->recipe}}</p>
+
+
+                            <p>Black farmers in the US’s South—faced with continued failure in their efforts to run for the successful farms their
+                                launched </p>
+
+                        </div>
+                    </div>
+
+
+
                     <div class="ts-grid-box content-wrapper single-post">
                         <div class="post-content-area">
                             <div class="entry-content">
@@ -61,31 +84,7 @@
                             </div>
                             <!-- entry content end-->
                         </div>
-                        <!-- post content area-->
-                        <div class="author-box">
-                            <img class="author-img" src="{{('/img/avater/author.png')}}" alt="">
-                            <div class="author-info">
-                                <h4 class="author-name">Elina Themen</h4>
-                                <div class="authors-social">
-                                    <a href="#" class="ts-twitter">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="ts-facebook">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    <a href="#" class="ts-google-plus">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                    <a href="#" class="ts-linkedin">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Black farmers in the US’s South—faced with continued failure in their efforts to run for the successful farms their
-                                    launched </p>
 
-                            </div>
-                        </div>
                         <!-- author box end-->
                         <div class="post-navigation clearfix">
                             <div class="post-previous float-left">

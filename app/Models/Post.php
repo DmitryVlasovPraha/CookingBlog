@@ -30,20 +30,13 @@ class Post extends Model {
         'excerpt',
         'content',
         'image',
+        'recipe'
     ];
 
     /**
      * Количество постов на странице при пагинации
      */
     protected $perPage = 5;
-
-   /* private $stemmer;
-
-    public function __construct(LinguaStemRu $stemmer) {
-        $this->stemmer = $stemmer;
-
-    }*/
-
     /**
      * Связь модели Post с моделью Tag, позволяет получить
      * все теги поста
@@ -75,8 +68,8 @@ class Post extends Model {
     /**
      * Связь модели Post с моделью Ingredient
      */
-    public function ingredient() {
-        return $this->belongsToMany(Ingredient::class);
+    public function ingredients() {
+        return $this->belongsToMany(Ingredient::class, 'post_ingredient')->withTimestamps();
     }
 
     /**

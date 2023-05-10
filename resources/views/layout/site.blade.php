@@ -41,7 +41,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <link rel="stylesheet" href="{{('css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('css/slick.css')}}">
 
     <!-- Responsive -->
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
@@ -56,8 +56,30 @@
 
 </head>
 <body>
+
 <div class="body-inner-content">
     @include('layout.components.header')
+    @if ($message = session('success'))
+        <div class="alert alert-success alert-dismissible mt-0" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ $message }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible mt-4" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <!-- header nav end-->
             @yield('content')
     <!-- col end-->

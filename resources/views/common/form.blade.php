@@ -17,16 +17,23 @@
     </select>
 </div>
 <div class="form-group">
+    <textarea class="form-control" name="recipe" placeholder="Ингредиенты"
+              required maxlength="500">{{ old('recipe') ?? $post->recipe ?? '' }}</textarea>
+</div>
+<div class="form-group">
     <textarea class="form-control" name="excerpt" placeholder="Анонс поста"
               required maxlength="500">{{ old('excerpt') ?? $post->excerpt ?? '' }}</textarea>
 </div>
+
 <div class="form-group">
     <textarea class="form-control" name="content" id="editor" placeholder="Текст поста"
               rows="4">{{ old('content') ?? $post->content ?? '' }}</textarea>
 </div>
+
 <div class="form-group">
     <input type="file" class="form-control-file" name="image" accept="image/png, image/jpeg">
 </div>
+
 @isset($post->image)
     <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" name="remove" id="remove">

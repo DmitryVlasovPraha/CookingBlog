@@ -7,6 +7,7 @@ use App\Helpers\ImageUploader;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Mail\NewPostMailer;
+use App\Models\Ingredient;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -33,7 +34,8 @@ class PostController extends Controller {
      * Показывает форму создания поста
      */
     public function create() {
-        return view('user.post.create');
+        $ingred = Ingredient::orderBy('name', 'ASC')->get();
+        return view('user.post.create', compact('ingred'));
     }
 
     /**
@@ -44,11 +46,12 @@ class PostController extends Controller {
         $request->merge(['user_id' => auth()->user()->id]);
         // сохраняем новый пост в базе данных
         $post = new Post();
-        $post->fill($request->except(['image', 'tags']));
+        $post->fill($request->except(['image', 'tags', 'ingredients']));
         $post->image = $this->imageSaver->upload($post);
         $post->save();
         // привязываем теги к новому посту
         $post->tags()->attach($request->tags);
+        $post->ingredients()->attach($request->ingredients);
 
         return redirect()
             ->route('user.post.show', ['post' => $post->id])
