@@ -10,13 +10,13 @@
                     <div class="ts-grid-box entry-header">
                         <ol class="ts-breadcrumb">
                             <li>
-                                <a href="#">
+                                <a href="{{route('index')}}">
                                     <i class="fa fa-home"></i>
-                                    Home
+                                    Главная
                                 </a>
                             </li>
                             <li>
-                                <a href="#">Category</a>
+                                <a href="#">Автор</a>
                             </li>
 
                         </ol>
@@ -24,14 +24,13 @@
                             <h2 class="ts-title float-left">Посты автора: {{ $user->name }}</h2>
                             <ul class="ts-category-list float-right">
                                 <li>
-                                    <a href="#" class="ts-blue-bg">Post 1</a>
+                                    <a href="#" class="ts-blue-bg"></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="ts-grid-box">
                 <div class="author-box author-box-item">
                     <img class="author-img" src="images/news/user1.png" alt="">
@@ -66,12 +65,9 @@
                     </ul>
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="col-lg-9">
                     <div class="row">
-
                         @foreach ($posts as $post)
                             @include('blog.part.post', ['post' => $post])
                         @endforeach
@@ -118,36 +114,14 @@
                 <div class="col-lg-3">
                     <div class="right-sidebar">
                         <div class="ts-grid-box widgets social-widget">
-                            <h2 class="widget-title">Follow us</h2>
+                            <h2 class="widget-title">Наши соц сети</h2>
                             <ul class="ts-social-list">
-                                <li class="ts-facebook">
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                        <b>12.5 k </b>
-                                        <span>Likes</span>
-                                    </a>
-
-                                </li>
-                                <li class="ts-google-plus">
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                    <b>12.5 k </b>
-                                    <span>Follwers</span>
-                                </li>
                                 <li class="ts-twitter">
                                     <a href="#">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                     <b>12.5 k </b>
                                     <span>Follwers</span>
-                                </li>
-                                <li class="ts-pinterest">
-                                    <a href="#">
-                                        <i class="fa fa-pinterest-p"></i>
-                                    </a>
-                                    <b>12.5 k </b>
-                                    <span>Photos</span>
                                 </li>
                                 <li class="ts-linkedin">
                                     <a href="#">

@@ -13,7 +13,7 @@ class IndexController extends Controller {
 
     public function index() {
 
-        $posts = Post::all();
+        $posts = Post::OrderBy('created_at', 'DESC')->get();
 
         $date =  Carbon::now();
 

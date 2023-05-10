@@ -13,30 +13,13 @@
 
             <div class="col-lg-8 align-self-center">
                 <ul class="footer-social">
-                    <li class="ts-facebook">
+                    <li class="ts-youtube">
                         <a href="#">
-                            <i class="fa fa-facebook"></i>
-                            <span>Facebook</span>
+                            <i class="fa fa-youtube"></i>
+                            <span>You tube</span>
                         </a>
                     </li>
-                    <li class="ts-google-plus">
-                        <a href="#">
-                            <i class="fa fa-google-plus"></i>
-                            <span>Google Plus</span>
-                        </a>
-                    </li>
-                    <li class="ts-twitter">
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                            <span>Twitter</span>
-                        </a>
-                    </li>
-                    <li class="ts-pinterest">
-                        <a href="#">
-                            <i class="fa fa-pinterest-p"></i>
-                            <span>pinterest</span>
-                        </a>
-                    </li>
+
                     <li class="ts-linkedin">
                         <a href="#">
                             <i class="fa fa-linkedin"></i>
@@ -60,10 +43,10 @@
             <div class="col-lg-6">
                 <div class="ts-newslatter-content">
                     <h2>
-                        Sign up for the Newsletter
+                        Подписывайтесь на наши публикации
                     </h2>
                     <p>
-                        Join our newsletter and get updates in your inbox. We won’t spam you and we respect your privacy.
+                       Подписывайтесь на наши публикации и получайте сообщения о новинках
                     </p>
                 </div>
             </div>
@@ -74,10 +57,10 @@
                     <form action="#" method="post" class="media align-items-end">
                         <div class="email-form-group media-body">
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                            <input type="email" name="email" id="newsletter-form-email" class="form-control" placeholder="Enter Your Email" autocomplete="off">
+                            <input type="email" name="email" id="newsletter-form-email" class="form-control" placeholder="Ваш Email" autocomplete="off">
                         </div>
                         <div class="d-flex ts-submit-btn">
-                            <button class="btn btn-primary">Subscribe</button>
+                            <button class="btn btn-primary">Подписаться</button>
                         </div>
                     </form>
                 </div>
@@ -95,27 +78,12 @@
                 <div class="footer-menu text-center">
                     <ul>
                         <li>
-                            <a href="#">Support</a>
-                        </li>
-                        <li>
-                            <a href="#">Suggestion</a>
-                        </li>
-                        <li>
-                            <a href="#">Privacy</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Our Ads </a>
-                        </li>
-                        <li>
-                            <a href="#">Terms</a>
+                            <a href="#"></a>
                         </li>
                     </ul>
                 </div>
                 <div class="copyright-text text-center">
-                    <p>&copy; 2023, Vinazine. All rights reserved</p>
+                    <p>&copy; 2023,Ум объешь! Все права защищены</p>
                 </div>
             </div>
         </div>

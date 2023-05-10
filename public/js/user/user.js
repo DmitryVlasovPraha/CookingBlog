@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
         $.ajax({
             data: data,
             type: 'POST',
-            url: '/admin/page/upload/image',
+            url: '/user/upload/post/image',
             cache: false,
             contentType: false,
             processData: false,
@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
         $.ajax({
             data: {'image': src, '_method': 'DELETE'},
             type: 'POST',
-            url: '/admin/page/remove/image',
+            url: '/user/remove/post/image',
             cache: false,
             success: function(msg) {
                 // console.log(msg);

@@ -17,17 +17,18 @@
     </select>
 </div>
 <div class="form-group">
+    <span>Ингредиенты</span>
     <textarea class="form-control" name="recipe" placeholder="Ингредиенты"
-              required maxlength="500">{{ old('recipe') ?? $post->recipe ?? '' }}</textarea>
+           id="editor"  required maxlength="500"rows="10" >{{ old('recipe') ?? $post->recipe ?? '' }}</textarea>
 </div>
 <div class="form-group">
     <textarea class="form-control" name="excerpt" placeholder="Анонс поста"
-              required maxlength="500">{{ old('excerpt') ?? $post->excerpt ?? '' }}</textarea>
+              required maxlength="500" >{{ old('excerpt') ?? $post->excerpt ?? '' }}</textarea>
 </div>
 
 <div class="form-group">
     <textarea class="form-control" name="content" id="editor" placeholder="Текст поста"
-              rows="4">{{ old('content') ?? $post->content ?? '' }}</textarea>
+              rows="10">{{ old('content') ?? $post->content ?? '' }}</textarea>
 </div>
 
 <div class="form-group">

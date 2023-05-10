@@ -13,9 +13,9 @@
                             <a  class="post-cat ts-orange-bg" href="{{ route('blog.tag', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
                         @endforeach
 
-                        <a href="#" class="post-cat ts-orange-bg">Travel</a>
+                        <a href="#" class="post-cat ts-orange-bg">Еда</a>
 
-                        <a href="#" class="post-cat ts-yellow-bg">Food</a>
+                            <a href="#" class="post-cat ts-yellow-bg">Кухня</a>
 
                         <h2 class="post-title lg">{{ $post->name }}</h2>
                         <ul class="post-meta-info">
@@ -53,28 +53,17 @@
 
             <div class="row">
                 <div class="col-lg-9">
-
-
                     <!-- Вывод ингридиентов-->
                     <div class="author-box">
 
                         <div class="author-info">
                             <h4 class="author-name">Вам понадобится:</h4>
                             <div class="clearfix"></div>
-
-
-
-                                <p>-{{$post->recipe}}</p>
-
-
-                            <p>Black farmers in the US’s South—faced with continued failure in their efforts to run for the successful farms their
-                                launched </p>
-
+                                <p>
+                                    {!! $post->recipe !!}
+                                </p>
                         </div>
                     </div>
-
-
-
                     <div class="ts-grid-box content-wrapper single-post">
                         <div class="post-content-area">
                             <div class="entry-content">
@@ -84,35 +73,9 @@
                             </div>
                             <!-- entry content end-->
                         </div>
-
-                        <!-- author box end-->
-                        <div class="post-navigation clearfix">
-                            <div class="post-previous float-left">
-                                <a href="#">
-                                    <img src="{{('/img/news/travel/travel6.jpg')}}" alt="">
-                                    <span>Read Previous</span>
-                                    <p>
-                                        Samsung goes big in India factory ever created
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="post-next float-right">
-                                <a href="#">
-                                    <img src="{{('/img/news/tech/tech5.jpg')}}" alt="">
-                                    <span>Read Next</span>
-                                    <p>
-                                        Samsung goes big in India factory ever created
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- post navigation end-->
                     </div>
-
                     <!--single post end -->
                     @include('blog.part.comments', ['comments' => $comments])
-
-
                     <!-- comment form end-->
                     <div class="ts-grid-box mb-30">
                         <h2 class="ts-title">Последнее на сайте</h2>
@@ -140,17 +103,7 @@
                                 </div>
                             </div>
                             @endforeach
-                            <!-- ts-grid-box end-->
-
-
-                            <!-- ts-grid-box end-->
                         </div>
-                        <!-- most-populers end-->
                     </div>
                 </div>
-                <!-- col end -->
-    <!-- single post end-->
-
-
-
 @endsection

@@ -90,7 +90,7 @@
 
                             @foreach($categories as $category)
                             <div class="item">
-                                <a class="post-cat ts-orange-bg" href="#">Travel</a>
+                                <a class="post-cat ts-orange-bg" href="#"></a>
                                 <div class="ts-post-thumb">
                                     <a href="{{ route('blog.category', ['category' => $category->slug]) }}">
                                         @if ($category->image)
@@ -106,7 +106,7 @@
                                     </h3>
                                     <span class="post-date-info">
 										<i class="fa fa-clock-o"></i>
-										{{$category->creaeted_at}}
+										{{$category->created_at}}
 									</span>
                                 </div>
                             </div>
@@ -416,22 +416,7 @@
                         <div class="ts-grid-box widgets ts-social-list-item">
                             <h3 class="ts-title">Соцсети</h3>
                             <ul>
-                                <li class="ts-facebook">
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                        <b>5.5 k </b>
-                                        <span>Likes</span>
-                                    </a>
 
-                                </li>
-                                <li class="ts-google-plus">
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                        <b>5.5 k </b>
-                                        <span>Follwers</span>
-                                    </a>
-
-                                </li>
                                 <li class="ts-twitter">
                                     <a href="#">
                                         <i class="fa fa-twitter"></i>
@@ -439,13 +424,7 @@
                                         <span>Follwers</span>
                                     </a>
                                 </li>
-                                <li class="ts-pinterest">
-                                    <a href="#">
-                                        <i class="fa fa-pinterest-p"></i>
-                                        <b>5.5 k </b>
-                                        <span>Photos</span>
-                                    </a>
-                                </li>
+
                                 <li class="ts-linkedin">
                                     <a href="#">
                                         <i class="fa fa-linkedin"></i>
@@ -460,27 +439,8 @@
                                         <span>Follwers</span>
                                     </a>
                                 </li>
-                                <li class="ts-instragram">
-                                    <a href="#">
-                                        <i class="fa fa-instagram"></i>
-                                        <b>5.5 k </b>
-                                        <span>Follwers</span>
-                                    </a>
-                                </li>
-                                <li class="ts-dribble">
-                                    <a href="#">
-                                        <i class="fa fa-dribbble"></i>
-                                        <b>5.5 k </b>
-                                        <span>Follwers</span>
-                                    </a>
-                                </li>
-                                <li class="ts-behance">
-                                    <a href="#">
-                                        <i class="fa fa-behance"></i>
-                                        <b>5.5 k </b>
-                                        <span>Follwers</span>
-                                    </a>
-                                </li>
+
+
                             </ul>
                         </div>
                         <!-- widgets end-->
@@ -617,7 +577,7 @@
                         @foreach($posts as $post)
                         <div class="col-lg-6 mb-30">
                             <div class="ts-grid-box ts-grid-content">
-                                <a class="post-cat ts-green-bg" href="#">Sports</a>
+                                <a class="post-cat ts-green-bg" href="#">Готовка</a>
                                 <div class="ts-post-thumb">
                                     <a href="{{ route('blog.post', ['post' => $post->slug]) }}">
                                         @if ($post->image)

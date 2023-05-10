@@ -55,7 +55,7 @@ class PostController extends Controller {
 
         return redirect()
             ->route('user.post.show', ['post' => $post->id])
-            ->with('success', 'Новый пост успешно создан');
+            ->with('success', 'Новый пост успешно создан! Пост будет опубликован после проверки админом.');
     }
 
     /**
