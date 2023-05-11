@@ -60,7 +60,7 @@ class BlogController extends Controller {
             ->published()
             ->with('user')->with('tags')
             ->orderByDesc('created_at')
-            ->paginate();
+            ->paginate(6);
         return view('blog.author', compact('user', 'posts'));
     }
 

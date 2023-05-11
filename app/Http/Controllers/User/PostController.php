@@ -26,7 +26,7 @@ class PostController extends Controller {
      * Список всех постов пользователя
      */
     public function index() {
-        $posts = Post::whereUserId(auth()->user()->id)->orderByDesc('created_at')->paginate();
+        $posts = Post::whereUserId(auth()->user()->id)->orderByDesc('created_at')->Paginate(5);
         return view('user.post.index', compact('posts'));
     }
 

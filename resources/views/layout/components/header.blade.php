@@ -25,16 +25,10 @@
                             <i class="fa fa-twitter"></i>
                         </a>
                         <a href="#">
-                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-youtube"></i>
                         </a>
                         <a href="#">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-pinterest"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-vimeo-square"></i>
+                            <i class="fa fa-linkedin"></i>
                         </a>
                     </li>
 
@@ -54,7 +48,7 @@
             <div class="col-lg-12 align-self-center">
                 <div class="header-logo text-center">
                     <a href="{{route('index')}}">
-                        <img src="{{'/img/logo_big.png'}}" alt="">
+                        <img src="{{'/img/logo.webp'}}" width="111" length="57" alt="">
                     </a>
                 </div>
             </div>
@@ -102,7 +96,7 @@
                                     <form>
                                         <span class="nav-search-close-button" tabindex="0">✕</span>
                                         <div class="nav-search-inner">
-                                            <input type="search" name="search" placeholder="Type and hit ENTER">
+                                            <input type="search" name="search" placeholder="Поиск">
                                         </div>
                                     </form>
 
@@ -166,11 +160,12 @@
                                         <!-- mega menu end-->
                                         <div class="megamenu-tabs-pane active">
                                             <div class="row">
+
                                                 <div class="col-12 col-lg-4">
                                                     <div class="item">
 
                                                         <div class="ts-post-thumb">
-                                                            <a class="post-cat ts-yellow-bg" href="#"></a>
+                                                            <a class="post-cat ts-yellow-bg" href="#">FOOD</a>
                                                             <a href="#">
                                                                 <img class="img-fluid" src="images/news/foods/food1.jpg" alt="">
                                                             </a>
@@ -182,6 +177,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-12 col-lg-4">
                                                     <div class="item">
 
@@ -298,7 +294,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="category-2.html">О нас</a>
+                                <a href="category-2.html">Форум</a>
                             </li>
                             <li>
                                 <a href="category-2.html">Стать автором</a>

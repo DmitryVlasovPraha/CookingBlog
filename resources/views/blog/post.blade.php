@@ -30,7 +30,7 @@
                             </li>
                             <li class="active">
                                 <i class="el el-fire"></i>
-                                3,005
+
                             </li>
                             <li class="share-post">
                                 <a href="#">

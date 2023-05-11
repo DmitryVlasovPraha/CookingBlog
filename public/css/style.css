@@ -6,7 +6,7 @@
   Version: 1.0
 
 =====================
-   table of content 
+   table of content
 ====================
 
 1.   Typography
@@ -654,7 +654,7 @@ blockquote cite:after {
 /*------- social color -----*/
 /*  */
 /*-------------------------
-  preloader 
+  preloader
   ---------------------*/
 #preloader {
   position: fixed;
@@ -1633,7 +1633,7 @@ blockquote cite:after {
 }
 
 /*------------------------------
-    featured post area 
+    featured post area
     ------------------------------*/
 .ts-overlay-style {
   position: relative;
@@ -2145,7 +2145,7 @@ img.sidebar-img {
 }
 
 /*----------------------------
-      watch now featured 
+      watch now featured
   ------------------------------*/
 .ts-video-btn {
   position: absolute;
@@ -2206,7 +2206,7 @@ img.sidebar-img {
 }
 
 /*---------------------------------
-    tranding post 
+    tranding post
 ------------------------------------*/
 .ts-grid-box.ts-col-box {
   padding: 40px 15px 22px 20px;
@@ -2866,7 +2866,7 @@ img.sidebar-img {
 }
 
 /*------------------------
-   more news 
+   more news
 --------------------------*/
 .ts-grid-box-heighlight {
   background: #7f85ff;
@@ -3222,8 +3222,8 @@ img.sidebar-img {
   font-size: 14px;
 }
 
-/*------------------------------ 
-      single post page 
+/*------------------------------
+      single post page
 -------------------------------*/
 .single-post-wrapper {
   padding: 30px 0;
@@ -3632,7 +3632,7 @@ p img.float-left {
   height: 70px;
 }
 
-/*------------------------- 
+/*-------------------------
 comments-form
 --------------------------*/
 /* Comments reply */
@@ -4212,7 +4212,7 @@ comments-form
 }
 
 /*------------------------- pagination --------------*/
-.pagination {
+/*.pagination {
   display: block;
 }
 
@@ -4249,7 +4249,7 @@ comments-form
 .ts-pagination-1 .pagination li.active a {
   background: #6cba40;
 }
-
+*/
 /*-------- vertion css -----*/
 .post-style-1 {
   position: relative;
@@ -4611,7 +4611,7 @@ comments-form
 }
 
 /*-----------------------------
- instragram photo 
+ instragram photo
  --------------------------*/
 .instagramPhoto {
   padding: 0;
@@ -4876,7 +4876,7 @@ comments-form
 }
 
 /*----------------------------
-  footer 4 
+  footer 4
   ------------------------*/
 .ts-footer-4 {
   background: #1a2130;
@@ -5645,7 +5645,7 @@ navbar-standerd
 }
 
 /*------------------------------
-    404 
+    404
 ------------------------------*/
 .error-page {
   padding: 80px 30px;
@@ -5682,7 +5682,7 @@ navbar-standerd
 }
 
 /*--------------------------------
-          sport index css 
+          sport index css
 ------------------------------------*/
 .top-bar.transparent {
   position: absolute;
@@ -5787,7 +5787,7 @@ navbar-standerd
 }
 
 /*---------------------
-     hero section 
+     hero section
 -----------------*/
 .featured-table {
   width: 100%;
@@ -6112,7 +6112,7 @@ tab-menu-item
 }
 
 /*----------------------------
-    travel index css 
+    travel index css
 ---------------------------*/
 .header-transprent {
   top: 25px;
@@ -6310,7 +6310,7 @@ tab-menu-item
 }
 
 /*-----------------
-featured tab personal blog 
+featured tab personal blog
 --------------*/
 .featured-tab-item .featured-tab-post {
   margin: 0;

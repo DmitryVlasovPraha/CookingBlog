@@ -33,15 +33,13 @@
             </div>
             <div class="ts-grid-box">
                 <div class="author-box author-box-item">
-                    <img class="author-img" src="images/news/user1.png" alt="">
+                    <img class="author-img" src="{{'/img/logo.webp'}}" alt="">
                     <div class="author-info">
                         <div class="author-name">
                             <h4>{{$user->name}}</h4>
                             <a href="#"></a>
                         </div>
-
                         <div class="authors-social">
-
                         </div>
                         <div class="clearfix"></div>
                         <p>{{$user->content}}</p>
@@ -71,45 +69,11 @@
                         @foreach ($posts as $post)
                             @include('blog.part.post', ['post' => $post])
                         @endforeach
-                        {{ $posts->links() }}
+
 
                     </div>
-                    <div class="ts-pagination text-center mb-20">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-double-left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-double-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    {{ $posts->links() }}
+
                 </div>
                 <div class="col-lg-3">
                     <div class="right-sidebar">
@@ -168,22 +132,10 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active ts-grid-box post-tab-list" id="home">
                                     @include('blog.components.latest-posts')
-                                    <!--post-content end-->
                                 </div>
-                                <!--ts-grid-box end -->
 
                                 <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="profile">
-                                    <div class="post-content media">
-                                        <img class="d-flex sidebar-img" src="images/news/sports/sports2.jpg" alt="">
-                                        <div class="media-body">
-                                    <span class="post-tag">
-                                       <a href="#" class="green-color"> sports</a>
-                                    </span>
-                                            <h4 class="post-title">
-                                                <a href="">Beats did announce something today</a>
-                                            </h4>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <!--ts-grid-box end -->
                             </div>
@@ -200,12 +152,11 @@
                                     <h4>Newsletter</h4>
                                     <p>Subscribe to get the best stories into your inbox!</p>
                                 </div>
-
                                 <div class="newsletter-form">
                                     <form action="#" method="post">
                                         <div class="form-group">
                                             <input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
-                                            <button class="btn btn-primary">Subscribe</button>
+                                            <button class="btn btn-primary">Подписаться</button>
                                         </div>
                                     </form>
                                 </div>

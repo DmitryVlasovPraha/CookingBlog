@@ -1,6 +1,6 @@
 <div class="col-lg-6 mb-30">
     <div class="ts-grid-box ts-grid-content">
-        <a class="post-cat ts-green-bg" href="#">Sports</a>
+        <a class="post-cat ts-green-bg" href="#">Рецепт</a>
         <div class="ts-post-thumb">
             <a href="{{ route('blog.post', ['post' => $post->slug]) }}">
                 @if ($post->image)

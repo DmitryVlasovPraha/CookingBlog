@@ -471,23 +471,7 @@
                             </div>
                             <!-- ts-overlay-style  end-->
 
-                            <div class="post-content media">
-                                <img class="d-flex sidebar-img" src="{{('img/news/sports/sports2.jpg')}}" alt="">
-                                <div class="media-body align-self-center">
-                                    <h4 class="post-title">
-                                        <a href="">18 month shoots himself by gun </a>
-                                    </h4>
-                                </div>
-                            </div>
-                            <!-- post content end-->
-                            <div class="post-content media">
-                                <img class="d-flex sidebar-img" src="{{('img/news/tech/tech2.jpg')}}" alt="">
-                                <div class="media-body align-self-center">
-                                    <h4 class="post-title">
-                                        <a href="">12 month shoots himself by gun </a>
-                                    </h4>
-                                </div>
-                            </div>
+
                             <!-- post content end-->
                         </div>
                         <div class="ts-grid-box widgets category-list-item">
@@ -529,6 +513,7 @@
                 <div class="owl-carousel" id="more-news-slider">
 
 
+                    @foreach($users as $user)
                     <div class="ts-overlay-style">
                         <div class="item">
                             <div class="ts-post-thumb">
@@ -540,7 +525,7 @@
                             <div class="overlay-post-content">
                                 <div class="post-content">
                                     <h3 class="post-title">
-                                        <a href="http://127.0.0.1:8000/blog/post/Rizotto-po-milanski">Vlasov Dmitrii</a>
+                                        <a href="http://127.0.0.1:8000/blog/author/11">{{$user->name}}</a>
                                     </h3>
                                     <span class="post-date-info">
 										<i class="fa fa-clock-o"></i>
@@ -551,6 +536,7 @@
                         </div>
                         <!-- end item-->
                     </div>
+                    @endforeach
 
                         </div>
                         <!-- end item-->
@@ -607,10 +593,9 @@
                             </div>
                         </div>
                         @endforeach
+                        {{$posts->links()}}
                     </div>
                 </div>
-
-
 
                 <div class="col-lg-3">
                     <div class="right-sidebar">
@@ -637,27 +622,13 @@
                                     </a>
                                 </li>
                             </ul>
-
                             <!-- Tab panes -->
                             <div class="tab-content">
-
                                 <div role="tabpanel" class="tab-pane active ts-grid-box post-tab-list" id="home">
                                     @include('blog.components.latest-posts')
                                 </div>
                                 <!--ts-grid-box end -->
-
                                 <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="profile">
-                                    <div class="post-content media">
-                                        <img class="d-flex sidebar-img" src="images/news/sports/sports2.jpg" alt="">
-                                        <div class="media-body">
-											<span class="post-tag">
-												<a href="#" class="green-color"> sports</a>
-											</span>
-                                            <h4 class="post-title">
-                                                <a href="">Beats did announce something today</a>
-                                            </h4>
-                                        </div>
-                                    </div>
                                     <!--post-content end-->
                                 </div>
 

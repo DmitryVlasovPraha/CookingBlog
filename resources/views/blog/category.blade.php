@@ -38,46 +38,13 @@
                         @foreach ($posts as $post)
                             @include('blog.part.post', ['post' => $post])
                         @endforeach
-                        {{ $posts->links() }}
-
                     </div>
                     <div class="ts-pagination text-center mb-20">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-double-left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-double-right"></i>
-                                </a>
-                            </li>
-                        </ul>
+                        {{$posts->links()}}
                     </div>
                 </div>
+
+
                 <div class="col-lg-3">
                     <div class="right-sidebar">
                         <div class="ts-grid-box widgets social-widget">
@@ -141,25 +108,6 @@
                                 <!--ts-grid-box end -->
 
                                 <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="profile">
-                                    <div class="post-content media">
-                                        <img class="d-flex sidebar-img" src="images/news/sports/sports2.jpg" alt="">
-                                        <div class="media-body">
-                                    <span class="post-tag">
-                                       <a href="#" class="green-color"> sports</a>
-                                    </span>
-                                            <h4 class="post-title">
-                                                <a href="">Beats did announce something today</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <!--post-content end-->
-
-                                    <!--post-content end-->
-
-                                    <!--post-content end-->
-
-                                    <!--post-content end-->
-                                    <!--post-content end-->
                                 </div>
                                 <!--ts-grid-box end -->
                             </div>
@@ -190,6 +138,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- row end-->
         </div>
         <!-- container end-->

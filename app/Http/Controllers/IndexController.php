@@ -9,18 +9,37 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Date;
 
 
-class IndexController extends Controller {
+class IndexController extends Controller
+{
 
-    public function index() {
+    public function index(User $user)
+    {
 
-        $posts = Post::OrderBy('created_at', 'DESC')->get();
+        /**
+         * Вывод всех постов блога
+         */
+        $posts = Post::OrderBy('created_at', 'DESC')->paginate(10);
 
-        $date =  Carbon::now();
+        /**
+         * Получение текущей даты и времени
+         */
+        $date = Carbon::now();
 
-        $categories = Category::limit(6)->get();
+        /**
+         * Вывод всех категорий блога
+         */
+        $categories = Category::OrderBy('created_at', 'DESC')->limit(6)->get();
 
-        $users = User::all();
+        /**
+         * Вывод пользователей с опубликованными постами
+         */
+        $users = $user->posts()
+            ->with('user')->with('posts')
+            ->orderByDesc('created_at')
+            ->paginate(6);
 
         return view('index', compact('posts', 'date', 'categories', 'users'));
     }
+
+
 }
