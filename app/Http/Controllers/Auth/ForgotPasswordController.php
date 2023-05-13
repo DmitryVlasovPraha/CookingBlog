@@ -30,7 +30,7 @@ class ForgotPasswordController extends Controller {
             'email' => 'required|email|exists:users',
         ]);
         $token = Str::random(60);
-        DB::table('password_resets')->insert(
+        DB::table('password_reset_tokens')->insert(
             ['email' => $request->email, 'token' => $token, 'created_at' => Carbon::now()]
         );
         // ссылка для сброса пароля
