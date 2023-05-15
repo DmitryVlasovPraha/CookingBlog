@@ -30,12 +30,10 @@
                             </li>
                             <li class="active">
                                 <i class="el el-fire"></i>
-
                             </li>
-                            <li class="share-post">
-                                <a href="#">
-                                    <i class="fa fa-share"></i>
-                                </a>
+                            <li class="active">
+                                <i class="fa-regular fa-heart"></i>
+                                {{ number_format($rating, 1, '.', '') }}
                             </li>
                         </ul>
                     </div>
@@ -51,7 +49,9 @@
                 </div>
             </div>
 
-            <div class="row">
+
+
+                <div class="row">
                 <div class="col-lg-9">
                     <!-- Вывод ингридиентов-->
                     <div class="author-box">
@@ -74,6 +74,34 @@
                             <!-- entry content end-->
                         </div>
                     </div>
+
+
+                        <div class="ts-grid-box mb-30">
+                            <h4 class="author-name">Поставьте, пожалуйста, оценку этому рецепту:</h4>
+                            <div class="clearfix"></div>
+                            <form role="form" class="ts-form" method="post" action="{{ route('blog.review', ['post' => $post->id]) }}">
+                                @csrf
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <div class="rating-area">
+                                    <input type="radio" id="star-5" name="rating" value="5">
+                                    <label for="star-5" title="Оценка «5»"></label>
+                                    <input type="radio" id="star-4" name="rating" value="4">
+                                    <label for="star-4" title="Оценка «4»"></label>
+                                    <input type="radio" id="star-3" name="rating" value="3">
+                                    <label for="star-3" title="Оценка «3»"></label>
+                                    <input type="radio" id="star-2" name="rating" value="2">
+                                    <label for="star-2" title="Оценка «2»"></label>
+                                    <input type="radio" id="star-1" name="rating" value="1">
+                                    <label for="star-1" title="Оценка «1»"></label>
+                                </div>
+                                <!-- Form row end -->
+                                <div class="clearfix">
+                                    <button class="comments-btn btn btn-primary" type="submit">Добавить</button>
+                                </div>
+                            </form>
+
+                        </div>
+
                     <!--single post end -->
                     @include('blog.part.comments', ['comments' => $comments])
                     <!-- comment form end-->

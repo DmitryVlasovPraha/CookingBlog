@@ -115,6 +115,9 @@ Route::group([
     // добавление комментария к посту
     Route::post('post/{post}/comment', [BlogController::class, 'comment'])
         ->name('comment');
+    // добавление комментария к посту
+    Route::post('post/{post}/review', [BlogController::class, 'review'])
+        ->name('review');
     // главная страница (все посты)
     Route::get('index', [BlogController::class, 'index'])
         ->name('index');

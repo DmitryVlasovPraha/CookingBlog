@@ -6,9 +6,11 @@ use App\Http\Requests\CommentRequest;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Review;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class BlogController extends Controller {
 
@@ -36,7 +38,10 @@ class BlogController extends Controller {
             ->orderBy('created_at')
             ->paginate();
         $topics = Post::orderBy('created_at', 'DESC')->limit(6)->get();
-        return view('blog.post', compact('post', 'comments', 'topics'));
+
+        $rating = $post->reviews()->avg('rating');
+
+        return view('blog.post', compact('post', 'comments', 'topics', 'rating'));
     }
 
     /**
@@ -105,5 +110,25 @@ class BlogController extends Controller {
         return view('blog.search', compact('posts', 'search'));
     }
 
+    /**
+     * Добавляет оценку к посту в бд
+     */
+    public function review(Request $request) {
+        if(!auth()->user()){
+            $message = 'Чтобы оставить оценку пройдите, пожалуйста, авторизацию';
+            return redirect()->route('auth.login')->with('success', $message);
+        }
+        $request->merge(['user_id' => auth()->user()->id]);
+        $message = 'Спасибо большое за Вашу оценку!';
+        if (auth()->user()) {
+            $request->merge(['published_by' => auth()->user()->id]);
+            $message = 'Спасибо большое за Вашу оценку!';
+        }
+        $review = Review::create($request->all());
+
+        return redirect()
+            ->route('blog.post', ['post' => $review->post->slug])
+            ->with('success', $message);
+    }
 
 }

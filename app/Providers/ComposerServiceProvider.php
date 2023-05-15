@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Review;
 use App\Models\Tag;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
@@ -70,5 +71,8 @@ class ComposerServiceProvider extends ServiceProvider {
         View::composer('blog.components.latest-posts', function($view) {
             $view->with(['posts' => Post::latestPosts()]);
         });
+       /* View::composer('layout.components.header', function($view) {
+            $view->with(['rating' => Review::rating()]);
+        });*/
     }
 }

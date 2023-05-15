@@ -45,10 +45,6 @@ class Post extends Model {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
-    public function reviews() {
-        return $this->belongsToMany(Review::class)->withTimestamps();
-    }
-
     /**
      * Связь модели Post с моделью Category, позволяет получить
      * родительскую категорию поста
@@ -86,6 +82,14 @@ class Post extends Model {
      */
     public function comments() {
         return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Связь модели Post с моделью Comment, позволяет получить
+     * все оценки к посту
+     */
+    public function reviews() {
+        return $this->hasMany(Review::class);
     }
 
     /**
@@ -232,4 +236,6 @@ class Post extends Model {
     public static function latestPosts(){
         return self::orderBy('created_at', 'DESC')->limit(7)->get();
     }
+
+
 }

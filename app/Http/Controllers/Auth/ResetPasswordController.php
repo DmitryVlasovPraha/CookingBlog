@@ -33,11 +33,11 @@ class ResetPasswordController extends Controller {
         ]);
         // удаляем старые записи из таблицы сброса паролей
         $expire = Carbon::now()->subMinute(60);
-        DB::table('password_resets')
+        DB::table('password_reset_tokens')
             ->where('created_at', '<', $expire)
             ->delete();
         // если ссылка на восстановления была отправлена
-        $row = DB::table('password_resets')
+        $row = DB::table('password_reset_tokens')
             ->where([
                 'email' => $request->email,
                 'token' => $request->token,
@@ -51,7 +51,7 @@ class ResetPasswordController extends Controller {
         User::where('email', $request->email)
             ->update(['password' => Hash::make($request->password)]);
         // удаляем пользователя из таблицы сброса паролей
-        DB::table('password_resets')->where(['email'=> $request->email])->delete();
+        DB::table('password_reset_tokens')->where(['email'=> $request->email])->delete();
 
         return redirect()
             ->route('auth.login')
